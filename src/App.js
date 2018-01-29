@@ -8,10 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>React Quiz</h2>
+          <h2>Spanish Practice</h2>
         </div>
-      <Question content="What is your favourite food" />
+      <Question content="Choose the right answer" />
      </div>
     );
   }
