@@ -5,6 +5,7 @@ import Question from './components/Question';
 import quizQuestions from './api/quizQuestions';
 import Quiz from './components/Quiz';
 import AnswerOption from './components/AnswerOption';
+import update from 'react-addons-update';
 
 class App extends Component {
   constructor(props) {
@@ -50,6 +51,16 @@ class App extends Component {
       array[randomIndex] = temporaryValue;
     }
     return array;
+  }
+
+  setUserAnswer(answer) {
+   const updatedAnswersCount = update(this.state.answersCount, {
+     [answer]: {$apply: (currentValue) => currentValue + 1}
+   });
+   this.setState({
+     answersCount: updatedAnswersCount,
+     answer: answer
+   });
   }
 
   handleAnswerSelected(event) {
